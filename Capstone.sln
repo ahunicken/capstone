@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentWheelzDataAccessLayer", "RentWheelzDAL\RentWheelzDataAccessLayer.csproj", "{BECEF3FD-A250-46CF-876E-4ABF793481DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentWheelzWebApi", "RentWheelzWebApi\RentWheelzWebApi.csproj", "{7AE67E82-21F3-470D-8862-5DA15CED669D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BECEF3FD-A250-46CF-876E-4ABF793481DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECEF3FD-A250-46CF-876E-4ABF793481DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECEF3FD-A250-46CF-876E-4ABF793481DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECEF3FD-A250-46CF-876E-4ABF793481DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AE67E82-21F3-470D-8862-5DA15CED669D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE67E82-21F3-470D-8862-5DA15CED669D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE67E82-21F3-470D-8862-5DA15CED669D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE67E82-21F3-470D-8862-5DA15CED669D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8104359-2057-4CD0-ADE9-2F0045D8055B}
+	EndGlobalSection
+EndGlobal
