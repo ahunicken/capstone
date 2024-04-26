@@ -9,6 +9,7 @@
         public ModelUserApi User { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
+        public int Duration { get; set; }
         public decimal TotalPrice { get; set; }
     }
 }

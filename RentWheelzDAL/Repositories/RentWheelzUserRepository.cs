@@ -3,7 +3,7 @@ using RentWheelzDataAccessLayer.Models;
 
 namespace RentWheelzDataAccessLayer.Repositories
 {
-    public class RentWheelzUserRepository
+    public class RentWheelzUserRepository: IRentWheelzUserRepository
     {
         private readonly RentWheelzDbContext _rentWheelzDbContext;
 

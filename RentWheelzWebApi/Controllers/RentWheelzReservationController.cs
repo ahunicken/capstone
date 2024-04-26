@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RentWheelzDataAccessLayer.Models;
+using RentWheelzWebApi.Interfaces;
+using RentWheelzWebApi.Messages;
 using RentWheelzWebApi.Services;
 
 namespace RentWheelzWebApi.Controllers
@@ -12,14 +14,14 @@ namespace RentWheelzWebApi.Controllers
     [ApiController]
     public class RentWheelzReservationController : ControllerBase
     {
-        private readonly RentWheelzReservationService _rentWheelzReservationService;
+        private readonly IRentWheelzReservationService _rentWheelzReservationService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RentWheelzReservationController"/> class.
         /// </summary>
-        public RentWheelzReservationController(IMapper mapper)
+        public RentWheelzReservationController(IRentWheelzReservationService service)
         {
-            _rentWheelzReservationService = new RentWheelzReservationService(mapper);
+            _rentWheelzReservationService = service;
         }
 
         /// <summary>
@@ -47,11 +49,11 @@ namespace RentWheelzWebApi.Controllers
 
             if (reservation != null)
             {
-                return new JsonResult(new { reservation, message = "Reservation successfully loaded." });
+                return new JsonResult(new ReservationMessage() { Reservation = reservation, Message = "Reservation successfully loaded." });
             }
             else
             {
-                return new JsonResult(new { message = "Reservation not found." });
+                return new JsonResult(new ReservationMessage() { Message = "Reservation not found." });
             }
         }
 
@@ -68,11 +70,11 @@ namespace RentWheelzWebApi.Controllers
 
             if (result)
             {
-                return new JsonResult(new { message = "Reservation successfully added." });
+                return new JsonResult(new ReservationMessage() { Message = "Reservation successfully added." });
             }
             else
             {
-                return new JsonResult(new { message = "Reservation failed." });
+                return new JsonResult(new ReservationMessage () { Message = "Reservation failed." });
             }
         }
 
@@ -89,11 +91,11 @@ namespace RentWheelzWebApi.Controllers
 
             if (result)
             {
-                return new JsonResult(new { message = "Reservation successfully cancelled." });
+                return new JsonResult(new ReservationMessage() { Message = "Reservation successfully cancelled." });
             }
             else
             {
-                return new JsonResult(new { message = "Cancellation failed." });
+                return new JsonResult(new ReservationMessage() { Message = "Cancellation failed." });
             }
         }
 
@@ -110,11 +112,11 @@ namespace RentWheelzWebApi.Controllers
 
             if (result)
             {
-                return new JsonResult(new { message = "Reservation successfully closed." });
+                return new JsonResult(new ReservationMessage() { Message = "Reservation successfully closed." });
             }
             else
             {
-                return new JsonResult(new { message = "Closing failed." });
+                return new JsonResult(new ReservationMessage() { Message = "Closing failed." });
             }
         }
     }

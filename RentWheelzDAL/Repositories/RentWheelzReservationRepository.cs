@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RentWheelzDataAccessLayer.Repositories
 {
-    public class RentWheelzReservationRepository
+    public class RentWheelzReservationRepository: IRentWheelzReservationRepository
     {
         // Add my db context here
         private readonly RentWheelzDbContext _rentWheelzDbContext;

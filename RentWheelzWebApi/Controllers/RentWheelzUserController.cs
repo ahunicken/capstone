@@ -12,14 +12,14 @@ namespace RentWheelzWebApi.Controllers
     [ApiController]
     public class RentWheelzUserController : Controller
     {
-        private readonly RentWheelzUserRepository _rentWheelzUserRepository;
+        private readonly IRentWheelzUserRepository _rentWheelzUserRepository;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RentWheelzUserController"/> class.
         /// </summary>
-        public RentWheelzUserController()
+        public RentWheelzUserController(IRentWheelzUserRepository rentWheelzUserRepository)
         {
-            _rentWheelzUserRepository = new RentWheelzUserRepository();
+            _rentWheelzUserRepository = rentWheelzUserRepository;
         }
 
         /// <summary>

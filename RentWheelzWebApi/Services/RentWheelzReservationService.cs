@@ -1,26 +1,30 @@
 ﻿using AutoMapper;
 using RentWheelzDataAccessLayer.Models;
 using RentWheelzDataAccessLayer.Repositories;
+using RentWheelzWebApi.Interfaces;
 using RentWheelzWebApi.Models;
 
 namespace RentWheelzWebApi.Services
 {
-    public class RentWheelzReservationService
+    public class RentWheelzReservationService: IRentWheelzReservationService
     {
         // Create a private instance of the RentWheelzReservationRepository
-        private readonly RentWheelzReservationRepository _rentWheelzReservationRepository;
-        private readonly RentWheelzVehicleRepository _rentWheelzVehicleRepository;
-        private readonly RentWheelzUserRepository _rentWheelzUserRepository;
+        private readonly IRentWheelzReservationRepository _rentWheelzReservationRepository;
+        private readonly IRentWheelzVehicleRepository _rentWheelzVehicleRepository;
+        private readonly IRentWheelzUserRepository _rentWheelzUserRepository;
 
         private readonly IMapper _mapper;
 
         // Create a constructor for the RentWheelzReservationService
-        public RentWheelzReservationService(IMapper mapper)
+        public RentWheelzReservationService(IMapper mapper, 
+            IRentWheelzReservationRepository rentWheelzReservationRepository,
+            IRentWheelzVehicleRepository rentWheelzVehicleRepository,
+            IRentWheelzUserRepository rentWheelzUserRepository)
         {
             // Instantiate the RentWheelzReservationRepository
-            _rentWheelzReservationRepository = new RentWheelzReservationRepository();
-            _rentWheelzVehicleRepository = new RentWheelzVehicleRepository();
-            _rentWheelzUserRepository = new RentWheelzUserRepository();
+            _rentWheelzReservationRepository = rentWheelzReservationRepository;
+            _rentWheelzVehicleRepository = rentWheelzVehicleRepository;
+            _rentWheelzUserRepository = rentWheelzUserRepository;
 
             _mapper = mapper;
         }
