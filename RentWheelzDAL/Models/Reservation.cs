@@ -1,4 +1,6 @@
-﻿namespace RentWheelzDataAccessLayer.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RentWheelzDataAccessLayer.Models;
 
 public partial class Reservation
 {
@@ -8,8 +10,10 @@ public partial class Reservation
 
     public int VehicleId { get; set; }
 
+    [Required]
     public DateOnly StartDate { get; set; }
 
+    [Required]
     public DateOnly EndDate { get; set; }
 
     public string Status { get; set; } = null!;

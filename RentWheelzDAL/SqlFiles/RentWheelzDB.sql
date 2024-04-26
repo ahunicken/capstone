@@ -41,8 +41,8 @@ CREATE TABLE Reservations
 	EndDate DATE NOT NULL,
 	Status NVARCHAR(50) NOT NULL,
 	Duration INT CONSTRAINT df_Reservations_Duration DEFAULT 1 NOT NULL,
-	FOREIGN KEY (UserID) REFERENCES Users(UserID),
-	FOREIGN KEY (VehicleID) REFERENCES Vehicles(VehicleID)
+	CONSTRAINT fk_Reservations_Users FOREIGN KEY (UserID) REFERENCES Users(UserID),
+	CONSTRAINT fk_Reservations_Vehicles FOREIGN KEY (VehicleID) REFERENCES Vehicles(VehicleID)
 );
 GO
 

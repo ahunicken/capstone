@@ -39,12 +39,12 @@ public partial class RentWheelzDbContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.Reservations)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Reservati__UserI__29572725");
+                .HasConstraintName("fk_Reservations_Users");
 
             entity.HasOne(d => d.Vehicle).WithMany(p => p.Reservations)
                 .HasForeignKey(d => d.VehicleId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Reservati__Vehic__2A4B4B5E");
+                .HasConstraintName("fk_Reservations_Vehicles");
         });
 
         modelBuilder.Entity<User>(entity =>
