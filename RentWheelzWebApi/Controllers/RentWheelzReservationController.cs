@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RentWheelzDataAccessLayer.Models;
-using RentWheelzDataAccessLayer.Repositories;
 using RentWheelzWebApi.Services;
 
 namespace RentWheelzWebApi.Controllers
@@ -18,9 +17,9 @@ namespace RentWheelzWebApi.Controllers
         /// <summary>
         /// Initializes a new instance of the <see cref="RentWheelzReservationController"/> class.
         /// </summary>
-        public RentWheelzReservationController()
+        public RentWheelzReservationController(IMapper mapper)
         {
-            _rentWheelzReservationService = new RentWheelzReservationService();
+            _rentWheelzReservationService = new RentWheelzReservationService(mapper);
         }
 
         /// <summary>

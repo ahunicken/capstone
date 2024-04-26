@@ -1,5 +1,7 @@
-﻿using RentWheelzDataAccessLayer.Models;
+﻿using AutoMapper;
+using RentWheelzDataAccessLayer.Models;
 using RentWheelzDataAccessLayer.Repositories;
+using RentWheelzWebApi.Models;
 
 namespace RentWheelzWebApi.Services
 {
@@ -10,13 +12,17 @@ namespace RentWheelzWebApi.Services
         private readonly RentWheelzVehicleRepository _rentWheelzVehicleRepository;
         private readonly RentWheelzUserRepository _rentWheelzUserRepository;
 
+        private readonly IMapper _mapper;
+
         // Create a constructor for the RentWheelzReservationService
-        public RentWheelzReservationService()
+        public RentWheelzReservationService(IMapper mapper)
         {
             // Instantiate the RentWheelzReservationRepository
             _rentWheelzReservationRepository = new RentWheelzReservationRepository();
             _rentWheelzVehicleRepository = new RentWheelzVehicleRepository();
             _rentWheelzUserRepository = new RentWheelzUserRepository();
+
+            _mapper = mapper;
         }
 
         // Create a method to get all reservations
@@ -27,7 +33,7 @@ namespace RentWheelzWebApi.Services
         }
 
         // Create a method to get a reservation by id, fill vehicle and user, use exception handling and return a reservation
-        public Reservation GetReservationById(int reservationId)
+        public ModelReservationApi GetReservationById(int reservationId)
         {
             // Call the GetReservationById method from the RentWheelzReservationRepository
             var reservation = _rentWheelzReservationRepository.GetReservationById(reservationId);
@@ -36,11 +42,20 @@ namespace RentWheelzWebApi.Services
             // check if user exists and then fill user from a reservation
             if (reservation != null)
             {
-                reservation.Vehicle = _rentWheelzVehicleRepository.GetVehicleById(reservation.VehicleId);
-                reservation.User = _rentWheelzUserRepository.GetUserById(reservation.UserId);
+                // mapping 
+                var modelReservation = _mapper.Map<ModelReservationApi>(reservation);
+
+                var vehicle = _rentWheelzVehicleRepository.GetVehicleById(modelReservation.VehicleId);
+                var user = _rentWheelzUserRepository.GetUserById(modelReservation.UserId);
+
+                // mapping vehicle and user
+                modelReservation.Vehicle = _mapper.Map<ModelVehicleApi>(vehicle);
+                modelReservation.User = _mapper.Map<ModelUserApi>(user);
+
+                return modelReservation;
             }
 
-            return new Reservation();
+            return new ModelReservationApi();
         }
 
         // Create a method to add a reservation, use exception handling and return a boolean
