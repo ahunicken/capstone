@@ -1,105 +1,8 @@
-# FINAL COUNTDOWN
+# CAPSTONE
 
-A react project to create a game of final countdown in _ReacJS_.
-ReactJs can use to simplify the game using useRef, useImperativeHandle, forwardRef.
-Create a modal with CreatePortal.
+Create a RentWheelz app using Github Copilot
 
-Play the game **final countdown**
-
-## Components
-
--   Player
--   Result Modal
--   Timer Challenge
-
-## Tech Stack
-
-**Client:** ReactJs, Eslint, Prettier
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
-
-## Challenges
-
--   User input with State (two way binding)
--   Using Fragments
--   Refs - accessing HTML Elements via Refs
--   Manipulating the DOM via Refs
--   Refs vs State Values
--   Fowarding Refs
--   useImperativeHandleHook
--   Exposing component APIs
--   Add Result modal
--   ESC (escape) key
--   Understand Portals
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/horcas1976/final-countdown
-```
-
-Go to the project directory
-
-```bash
-  cd final-countdown
-```
-
-Install dependencies
-
-```bash
-  npm install
-  npm install --save-dev eslint eslint-config-standard
-  npm install --save-dev eslint-config-prettier
-```
-
-````
-Build locally
-
-```bash
-  npm run build
-````
-
-Check linting
-
-```bash
-  npm run lint
-```
-
-Start the server locally
-
-```bash
-  npm run dev
-```
-
-## Usage/Examples
-
-### Index.html
-
-```HTML
-<div id="modal"></div>
-<div id="root"></div>
-```
-
-### App.jsx
-
-```javascript
-export default function App () {
-return (
-    <>
-      <Player />
-      <div id='challenges'>
-        <TimerChallenge title='Easy' targetTime={1} />
-        <TimerChallenge title='Not Easy' targetTime={5} />
-        <TimerChallenge title='Getting tough' targetTime={10} />
-        <TimerChallenge title='Pros only' targetTime={15} />
-      </div>
-    </>
-  );
-```
-
-# Hi, I'm Horcas21! 👋
+# Hi, I'm Criptafire! 👋
 
 ## 🚀 About Me
 
@@ -147,13 +50,7 @@ _Server side_: Express, .NET and microservices.
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ariel-h%C3%BCnicken-21387038//)
 
-## Related
 
-This template provides a minimal setup to get React working in Vite.
-
-```bash
-  npm create vite@latest my-react-app -- --template react
-```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
