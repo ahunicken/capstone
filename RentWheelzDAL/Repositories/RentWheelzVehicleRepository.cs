@@ -181,18 +181,5 @@ namespace RentWheelzDataAccessLayer.Repositories
                 return null;
             }
         }
-
-        // Add GetVehicleByReservation method here, please use exception handling, return a vehicle
-        public Vehicle? GetVehicleByReservation(Reservation reservation)
-        {
-            try
-            {
-                return _rentWheelzDbContext.Vehicles.FirstOrDefault(v => v.Reservations.Contains(reservation));
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-        }
     }
 }

@@ -48,6 +48,8 @@ namespace RentWheelzWebApi.Services
                 var vehicle = _rentWheelzVehicleRepository.GetVehicleById(modelReservation.VehicleId);
                 var user = _rentWheelzUserRepository.GetUserById(modelReservation.UserId);
 
+                modelReservation.TotalPrice = Math.Round(reservation.Duration * vehicle.Price, 2);
+
                 // mapping vehicle and user
                 modelReservation.Vehicle = _mapper.Map<ModelVehicleApi>(vehicle);
                 modelReservation.User = _mapper.Map<ModelUserApi>(user);

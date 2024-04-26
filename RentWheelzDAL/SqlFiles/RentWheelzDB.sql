@@ -58,11 +58,11 @@ GO
 
 --Insert 5 different records into the Vehicles table
 INSERT INTO Vehicles (Model, Year, RegistrationNumber, Price, Available, Thumbail)
-VALUES ('Toyota Camry', 2019, 'ABC123', 50.00, 1, 'https://www.rentwheelz.com/images/toyota-camry.jpg'),
-	   ('Honda Accord', 2018, 'DEF456', 60.00, 1, 'https://www.rentwheelz.com/images/honda-accord.jpg'),
-	   ('Ford Fusion', 2017, 'GHI789', 70.00, 1, 'https://www.rentwheelz.com/images/ford-fusion.jpg'),
-	   ('Chevrolet Malibu', 2016, 'JKL012', 80.00, 1, 'https://www.rentwheelz.com/images/chevrolet-malibu.jpg'),
-	   ('Nissan Altima', 2015, 'MNO345', 90.00, 1, 'https://www.rentwheelz.com/images/nissan-altima.jpg');
+VALUES ('Toyota Camry', 2019, 'ABC123', 50.05, 1, 'https://www.rentwheelz.com/images/toyota-camry.jpg'),
+	   ('Honda Accord', 2018, 'DEF456', 60.15, 1, 'https://www.rentwheelz.com/images/honda-accord.jpg'),
+	   ('Ford Fusion', 2017, 'GHI789', 70.45, 1, 'https://www.rentwheelz.com/images/ford-fusion.jpg'),
+	   ('Chevrolet Malibu', 2016, 'JKL012', 80.25, 1, 'https://www.rentwheelz.com/images/chevrolet-malibu.jpg'),
+	   ('Nissan Altima', 2015, 'MNO345', 90.35, 1, 'https://www.rentwheelz.com/images/nissan-altima.jpg');
 GO
 
 

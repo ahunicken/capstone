@@ -1,4 +1,5 @@
-﻿using RentWheelzDataAccessLayer.Models;
+﻿using Microsoft.Extensions.Configuration;
+using RentWheelzDataAccessLayer.Models;
 
 namespace RentWheelzDataAccessLayer.Repositories
 {
