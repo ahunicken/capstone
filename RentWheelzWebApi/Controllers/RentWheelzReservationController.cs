@@ -57,6 +57,21 @@ namespace RentWheelzWebApi.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Get reservations by user ID.
+        /// </summary>
+        /// <param name="userId">The ID of the user.</param>
+        /// <returns>A list of reservations.</returns>
+        [HttpGet]
+        [Route("GetReservationsByUserId")]
+        public IActionResult GetReservationsByUserId([FromQuery] int userId)
+        {
+            var reservations = _rentWheelzReservationService.GetReservationsByUserId(userId);
+
+            return Ok(reservations);
+        }
+
         /// <summary>
         /// Add a new reservation.
         /// </summary>

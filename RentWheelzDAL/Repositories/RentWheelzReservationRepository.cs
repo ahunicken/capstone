@@ -101,5 +101,17 @@ namespace RentWheelzDataAccessLayer.Repositories
                 return false;
             }
         }
+
+        public List<Reservation> GetReservationsByUserId(int userId)
+        {
+            try
+            {
+                return _rentWheelzDbContext.Reservations.Where(r => r.UserId == userId).ToList();
+            }
+            catch (Exception e)
+            {
+                return new List<Reservation>();
+            }
+        }
     }
 }

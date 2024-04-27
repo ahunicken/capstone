@@ -84,5 +84,11 @@ namespace RentWheelzWebApi.Services
             // Call the CloseReservation method from the RentWheelzReservationRepository
             return _rentWheelzReservationRepository.CloseReservation(reservationId);
         }
+
+        public List<Reservation> GetReservationsByUserId(int userId)
+        {
+            //Get reservations by user ID
+            return _rentWheelzReservationRepository.GetReservationsByUserId(userId);
+        }
     }
 }

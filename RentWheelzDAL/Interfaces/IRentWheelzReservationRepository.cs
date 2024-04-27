@@ -9,5 +9,6 @@ namespace RentWheelzDataAccessLayer.Repositories
         bool AddReservation(Reservation reservation);
         bool CancelReservation(int reservationId);
         bool CloseReservation(int reservationId);
+        List<Reservation> GetReservationsByUserId(int userId);
     }
 }
